@@ -1,0 +1,25 @@
+.title {
+  color: white;
+  font-size: 10px;
+  height: 12px;
+  overflow: hidden;
+  background: black;
+}
+
+.text {
+  position: absolute;
+  top: 12px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2px 6px;
+  overflow: auto;
+  font-size: 14px;
+  font-family: simsun;
+  line-height: 1.4em;
+}
+
+.block {
+  position: absolute;
+  overflow: hidden;
+}
