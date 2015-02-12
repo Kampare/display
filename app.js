@@ -45,6 +45,9 @@ function history() {
 
         console.log(tags);
 
+        //=========
+        data = preprocess(data);
+
         var cols = multiSplit(data);
         cols.forEach(function (col, index) {
           drawCol(el.append('div'), col, 50 + index * 200, meta, scale, tags);
@@ -127,4 +130,12 @@ function multiSplit(data) {
   }
 
   return results;
+}
+
+function preprocess(data) {
+  return _.union.apply(null, _.toArray(_.groupBy(data, function (ev) {
+    return ev.tags[0];
+  }))).sort(function (a, b) {
+    return (b.time.end.end - b.time.start.start) - (a.time.end.end - a.time.start.start);
+  });
 }
